@@ -36,7 +36,7 @@ class ContactData extends Component {
         },
         valid: false,
         touched: false
-     },
+      },
       zipCode: {
         elementType: 'input',
         elementConfig: {
@@ -51,7 +51,7 @@ class ContactData extends Component {
         },
         valid: false,
         touched: false
-    },
+      },
       country: {
         elementType: 'input',
         elementConfig: {
@@ -64,7 +64,7 @@ class ContactData extends Component {
         },
         valid: false,
         touched: false
-   },
+      },
       email: {
         elementType: 'input',
         elementConfig: {
@@ -77,7 +77,7 @@ class ContactData extends Component {
         },
         valid: false,
         touched: false
-    },
+      },
       deliveryMethod: {
         elementType: 'select',
         elementConfig: {
@@ -102,19 +102,19 @@ class ContactData extends Component {
     for (let formElementIdentifier in this.state.orderForm) {
       formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
     }
-      const order = {
-        ingredients: this.props.ingredients,
-        price: this.props.totalPrice,
-        orderData: formData
-      }
-        axios.post( '/orders.json', order )
-            .then( response => {
-                this.setState( { loading: false } );
-                this.props.history.push('/');
-            } )
-            .catch( error => {
-                this.setState( { loading: false } );
-          } );
+    const order = {
+      ingredients: this.props.ingredients,
+      price: this.props.totalPrice,
+      orderData: formData
+    }
+    axios.post( '/orders.json', order )
+      .then( response => {
+        this.setState( { loading: false } );
+        this.props.history.push('/');
+      } )
+      .catch( error => {
+        this.setState( { loading: false } );
+      } );
   }
 
   checkValidity(value, rules) {
@@ -184,7 +184,7 @@ class ContactData extends Component {
           <Button
             btnType="Success"
             disabled={!this.state.formIsValid}
-            >ORDER</Button>
+          >ORDER</Button>
         </form>
       </Aux>
     );

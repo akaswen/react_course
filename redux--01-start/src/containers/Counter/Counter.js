@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import * as actionCreators from '../../store/actions/index.js';
 
 import CounterControl from '../../components/CounterControl/CounterControl';
